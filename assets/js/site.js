@@ -32,6 +32,7 @@ const controller = {
 	async getDog() {
 		const response = await fetch("https://dog.ceo/api/breeds/image/random");
 		const data = await response.json();
+
 		model.image = data.message;
 		view.render();
 		document.querySelector("#new-dog").onclick = () => this.getDog();
